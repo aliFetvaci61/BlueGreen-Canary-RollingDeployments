@@ -27,3 +27,22 @@ In the above image, we have two identical clusters and on which Green one will a
 #### The effort of managing/maintaining the Production is increased.
 #### Creating Delivery Pipeline is difficult as we have two environments to maintain.
 #### Interactive Reporting or Dashboard is required to Manage the Deployment.
+
+## Canary Deployment
+Unlike the normal deployment, Canary Deployment follows the strategy that releases the feature or new versions into the target servers incrementally to the subset of users. This deployment will happen in incremental phases. And the subset of users will act as the Testers/validators who will verify the release.
+
+![image](https://user-images.githubusercontent.com/16122994/150844505-2c938393-5e35-4de7-9e51-3701cc2456e2.png)
+
+The above image assumes the application is in Version V1.0 and the new release or the deployment deploys V2.0. This deployment happens in four phases. In phase 1, the Release will happen in 25% of the nodes in the cluster and that will be tested by the Set of users. Then, in Phase 2, 50% of nodes will receive the V2.0 and Phase 3- 75%, and finally in phase 4- 100% of nodes will receive the new version. This is how Canary Deployment works.
+
+### Pros of Canary Deployment
+#### Canary Deployment allows real users or acting real users of the Production environment to test the New Features.
+#### No Downtime while updating or releasing the new feature.
+#### Cheaper in terms of Infrastructural resources.
+#### Rollback to the older version made it very easy.
+### Cons of Canary Deployment
+#### When limiting the number of nodes for the end-user might impact the overall performance.
+#### Canary Deployment Mechanism is complex.
+#### User verification and testing may take time and make the process slower.
+#### The monitoring and feedback system for the infrastructure should be modified to monitor the canary deployment separately.
+
