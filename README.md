@@ -46,3 +46,25 @@ The above image assumes the application is in Version V1.0 and the new release o
 #### User verification and testing may take time and make the process slower.
 #### The monitoring and feedback system for the infrastructure should be modified to monitor the canary deployment separately.
 
+
+## Rolling Deployment.
+Rolling Deployment is like Canary Deployment. But the difference is, in the rolling deployment, we update the newer version into a single/defended number of instances.
+
+![image](https://user-images.githubusercontent.com/16122994/150844830-2f5b4155-76cb-493a-acb4-bd3596e37e9e.png)
+
+
+As mentioned in the above image, Rolling Deployment releases the update in one by one process. Which means, the Deployment is happening in the first two instance and then, incrementally next two instance vice versa. So, testing will be carried out in each batch of release.
+
+### Pros of Rolling Deployment
+#### The rollback process is very easy as we are deploying an Instance by instance.
+#### Easy and Simple to implement the Deployment mechanism
+#### Cost-effective as the effort and infrastructure utilization is highly less.
+### Cons of Rolling Deployment
+#### Since the Number of release batches is increased, the Testing and Verification process is very lengthy and slow.
+#### We need to make sure of the Artifact availability till the deployment process finishes with Nth Bach.
+#### How to choose a Deployment Strategies.
+#### After analyzing the working mechanism of the above deployment strategies, Canary Deployment will be suitable for mission-critical Web applications. Blue-Green Deployment can be done for the customer base where they have less business impact. Rolling deployment is useful for the cluster which is having a smaller number of nodes.
+
+## Conclusion
+In this article, we discussed some strategies for Continuous Delivery. Especially, Canary vs Blue-Green vs Rolling Deployment with Pros and Cons of each Deployment strategies. 
+
